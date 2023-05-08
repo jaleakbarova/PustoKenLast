@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    int count = 1;
+}
+@model List<Slider>
+
+<div class="card-body">
+    <div class="d-flex justify-content-end mr-2 mb-3">
+        <a class="btn btn-success" asp-action="Create" >Create Slider</a>
+    </div>
+    <div class="table-responsive pt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Title 1
+                    </th>
+                    <th>
+                        Title 2
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Photo
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+               @foreach(var item in Model){
+                <tr class="table-info">
+                    <td>
+                        @(count++)
+                    </td>
+                    <td>
+                        @item.Title1
+                    </td>
+                    <td>
+                        @item.Title2
+                    </td>
+                    <td>
+                        @item.Description
+                    </td>
+                    <td>
+                        @item.Image
+                    </td>
+                </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
